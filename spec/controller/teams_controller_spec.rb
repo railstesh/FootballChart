@@ -5,7 +5,7 @@ RSpec.describe TeamsController, type: :controller do
   # Routes
   describe 'Routes' do
     it { expect(get: '/teams').to route_to({ controller: 'teams', action: 'index' }) }
-    it { expect(get: '/raw_data').to route_to({ controller: 'teams', action: 'raw_data' }) }
+    it { expect(get: '/raw_teams_data').to route_to({ controller: 'teams', action: 'raw_teams_data' }) }
   end
   
   describe 'List all Teams' do
@@ -18,9 +18,9 @@ RSpec.describe TeamsController, type: :controller do
 	end
 	
 	describe 'List all Teams as raw data' do
-    describe "#raw_data", search: true do
+    describe "#raw_teams_data", search: true do
       it 'List all Teams as raw ' do
-        get :raw_data
+        get :raw_teams_data
         expect(response.status).to be 200
       end
     end

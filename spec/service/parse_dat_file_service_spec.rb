@@ -5,8 +5,10 @@ RSpec.describe ParseDatFileService, type: :service do
 
   describe "#Parse data from file" do
     it "Parse Data" do
-      object = ParseDatFileService.new(filepath).parse { }
-      expect(object.class).to eq (File)
+      teams = []
+      ParseDatFileService.new(filepath).parse {|team| teams << team }
+      expect(teams.count).to eq (20)
+      expect(teams.class).to eq (Array)
     end
   end
 end
