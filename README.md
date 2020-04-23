@@ -1,24 +1,27 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
 * Ruby version
+	`ruby 2.6.3`
 
 * System dependencies
-
-* Configuration
+	- Required Postgres DB	
 
 * Database creation
-
-* Database initialization
+	Run following commands in App folder
+	- Run `bundle install` to install all gems
+	- Run `rake db:create` to create DB
+	- Run `rake db:migrate` to run all migrations
 
 * How to run the test suite
+	- Run `rspec` command in your App folder
 
-* Services (job queues, cache servers, search engines, etc.)
+Run `bundle exec rake environment create_team:get_team` command to create Teams record in your DB
 
-* Deployment instructions
+- Parsed data
+We are displaying data from DB on `localhost:3000` with proper fromat
 
-* ...
+- Highlighted Data
+Row Highlighted on Parsed data table whose goal strike and goal against difference is minimum
+
+- Raw data
+At bottom of page we have `get raw data` button redirect to page showing raw data record directly from `.dat` file
