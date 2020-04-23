@@ -1,4 +1,4 @@
-class TeamsService
+class ParseDatFileService
   attr_reader :filepath, :col_separator
 
   def initialize(filepath)
